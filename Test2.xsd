@@ -1,0 +1,79 @@
+<?xml version = "1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!-- CLE -->
+
+	<xs:complexType name="Adresse">
+		<xs:sequence>
+			<xs:element name="Adresse" type="xs:string" />
+			<xs:element name="A" type="xs:string" />
+			<xs:element name="AdrNoPol" type="xs:integer" />
+			<xs:element name="RueCode" type="xs:integer" />
+			<xs:element name="PostCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:pattern value="[1-9][0-9][0-9][0-9]" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Commune" type="xs:string" />
+			<xs:element name="Localite" type="xs:string" />
+			<xs:element name="SLocalite" type="xs:string" />
+			<xs:element name="Zone" type="xs:integer" /> <!-- 1,2 ?? -->
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Enseigne">
+		<xs:sequence>
+			<xs:element name="Matricule" type="xs:integer" />
+			<xs:element name="Enseigne" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Exploitant">
+		<xs:sequence>
+			<xs:element name="Exploitant" type="xs:string" />
+			<xs:element name="Tel" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- DB -->
+
+	<xs:complexType name="Parametres">
+		<xs:sequence>
+			<xs:element name="Activite" type="xs:string" />
+			<xs:element name="SActivite" type="xs:string" />
+			<xs:element name="TypeBoisson" type="xs:string" />
+			<xs:element name="Categorie" type="xs:string" />
+			<xs:element name="NbM2" type="xs:integer" />
+			<xs:element name="NbMois" type="xs:integer" />
+			<xs:element name="StNature" type="xs:string" /> <!-- 104 ?? -->
+			<xs:element name="StType" type="xs:string" /> <!-- 204 ?? -->
+
+			<xs:element name="Terrasse">
+				<xs:simpleType>
+					<xs:sequence>
+						<xs:element name="Terrasse" type="xs:boolean" />
+						<xs:element name="TypeTerrasse" type="xs:string" /> <!-- A ciel ouvert -->
+					</xs:sequence>
+				</xs:simpleType>
+			</xs:element>
+
+
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Administratif">
+		<xs:sequence>
+			<xs:element name="DateOctroi" type="xs:date" />
+			<xs:element name="DateOuvert" type="xs:date" />
+			<xs:element name="DateFerme" type="xs:date" />
+			<xs:element name="Autorisation" type="xs:string" /> <!-- PDF -->
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+	<!-- GEOMETRIE, GID(?), APIC -->
+</xs:schema>
