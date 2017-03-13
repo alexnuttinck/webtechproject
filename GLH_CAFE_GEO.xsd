@@ -2,7 +2,18 @@
 
 <xsd:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	
-	<xsd:complexType name="Adresse">
+	<xsd:complexType name="GLH_CAFE_GEO">
+		<xsd:sequence>
+			<xsd:element name="Adresse" type="ADRESSE" />
+			<xsd:element name="Enseigne" type="ENSEIGNE" />
+			<xsd:element name="Exploitant" type="EXPLOITANT" />
+			<xsd:element name="Parametres" type="PARAMETRES" />
+			<xsd:element name="Administratif" type="ADMINISTRATIF"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+	<xsd:complexType name="ADRESSE">
 		<xsd:sequence>
 			<xsd:element name="Adresse" type="xs:string" />
 			<xsd:element name="AdrNoPol" type="xs:integer" />
@@ -23,21 +34,21 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:complexType name="Enseigne">
+	<xsd:complexType name="ENSEIGNE">
 		<xsd:sequence>
 			<xsd:element name="Matricule" type="xs:integer" />
 			<xsd:element name="Enseigne" type="xs:string" />
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:complexType name="Exploitant">
+	<xsd:complexType name="EXPLOITANT">
 		<xsd:sequence>
 			<xsd:element name="Exploitant" type="xs:string" />
 			<xsd:element name="Tel" type="xs:string" />
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:complexType name="Parametres">
+	<xsd:complexType name="PARAMETRES">
 		<xsd:sequence>
 			<xsd:element name="Activite" type="xs:string" />
 			<xsd:element name="SActivite" type="xs:string" />
@@ -45,6 +56,7 @@
 			<xsd:element name="Categorie" type="xs:string" />
 			<xsd:element name="NbM2" type="xs:integer" />
 			<xsd:element name="NbMois" type="xs:integer" />
+			<xsd:element name="Geometry" type="xsd:string"/>
 			
 			<xsd:element name="Terrasse">
 				<xsd:complexType>
@@ -59,7 +71,7 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-	<xsd:complexType name="Administratif">
+	<xsd:complexType name="ADMINISTRATIF">
 		<xsd:sequence>
 			<xsd:element name="DateOctroi" type="xs:date" />
 			<xsd:element name="DateOuvert" type="xs:date" />
