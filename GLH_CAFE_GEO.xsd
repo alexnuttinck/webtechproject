@@ -45,9 +45,7 @@
 			<xs:element name="Categorie" type="xs:string" />
 			<xs:element name="NbM2" type="xs:integer" />
 			<xs:element name="NbMois" type="xs:integer" />
-			<xs:element name="StNature" type="xs:string" /> <!-- 104 ?? -->
-			<xs:element name="StType" type="xs:string" /> <!-- 204 ?? -->
-
+			
 			<xs:element name="Terrasse">
 				<xs:complexType>
 					<xs:sequence>
