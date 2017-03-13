@@ -45,8 +45,6 @@
 			<xsd:element name="entreprise" type="ENTREPRISE" />
 			<xsd:element name="director" type="DIRECTOR_TYPE" />
 			<xsd:element name="etablissement" type="ETA_TYPE" />
-			<xsd:element name="st" type="ST" />
-			<xsd:element name="apic" type="APIC" />
 			<xsd:element name="geometry" type="xsd:string"/>
 			<xsd:element name="others" type="OTHERS"/>
 		</xsd:sequence>
@@ -81,7 +79,6 @@
 			<xsd:element name="sex" type="xsd:string" />
 			<xsd:element name="function" type="xsd:integer" />
 			<xsd:element name="functionTitle" type="xsd:string" /> <!-- fonctionLibelle -->
-			<xsd:element name="delta" type="xsd:string" />  <!-- Should be here?? -->
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -108,26 +105,6 @@
 			<xsd:element name="postalCode" type="postalCodeType" />
 			<xsd:element name="locality" type="xsd:string" />
 			<xsd:element name="streetCode" type="xsd:string" />
-		</xsd:sequence>
-	</xsd:complexType>
-
-
-	<!-- ST_NATURE & ST_TYPE -->
-	<xsd:complexType name="ST">
-		<xsd:sequence>
-			<xsd:element name="nature" type="xsd:int" />
-			<xsd:element name="type" type="xsd:int" />
-		</xsd:sequence>
-	</xsd:complexType>
-
-	<!-- APIC data -->
-	<xsd:complexType name="APIC">
-		<xsd:sequence>
-			<xsd:element name="style" type="xsd:string" />
-			<xsd:element name="space" type="xsd:int" />
-			<xsd:element name="state" type="xsd:int" />
-			<xsd:element name="cDate" type="xsd:date" />
-			<xsd:element name="mDate" type="xsd:date" />
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -160,14 +137,6 @@
 		</xsd:sequence>
 	</xsd:complexType>
 
-
-	<xsd:complexType name="SOURCE">
-		<xsd:sequence>
-			<xsd:element name="source" type="xsd:string"/>
-			<xsd:element name="dateFile" type="xsd:date"/>
-		</xsd:sequence>
-	</xsd:complexType>
-
 	<!-- WTF ?? -->
 	<xsd:complexType name="OTHERS">
 		<xsd:sequence>
@@ -177,7 +146,6 @@
 			<xsd:element name="streetName" type="xsd:string"/>
 			<xsd:element name="acomNameM" type="xsd:string"/>
 			<xsd:element name="acomInsCode" type="xsd:string"/>
-			<xsd:element name="key" type="xsd:int"/>
 			<xsd:element name="ghostAdress" type="xsd:string"/>
 		</xsd:sequence>
 	</xsd:complexType>
