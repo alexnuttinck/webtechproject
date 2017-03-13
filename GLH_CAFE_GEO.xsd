@@ -11,8 +11,10 @@
 			<xsd:element name="RueCode" type="xs:integer" />
 			<xsd:element name="PostCode">
 				<xsd:simpleType>
-					<xsd:restriction base="xs:integer">
-						<xsd:pattern value="[1-9][0-9][0-9][0-9]" />
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="5+[0-9]+"/>
+						<xsd:minLength value="4"/>
+						<xsd:maxLength value="4"/>
 					</xsd:restriction>
 				</xsd:simpleType>
 			</xsd:element>
