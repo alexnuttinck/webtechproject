@@ -41,7 +41,6 @@
 
 	<xsd:complexType name="ECON_ENTREPRISES_GEO">
 		<xsd:sequence>
-			<xsd:element name="gId" type="xsd:int" />
 			<xsd:element name="entreprise" type="ENTREPRISE" />
 			<xsd:element name="director" type="DIRECTOR_TYPE" />
 			<xsd:element name="etablissement" type="ETA_TYPE" />
@@ -54,7 +53,6 @@
 	<xsd:complexType name="ENTREPRISE">
 		<xsd:sequence>
 			<xsd:element name="noTva" type="xsd:int" />
-			<xsd:element name="noEntreprise" type="xsd:int" />
 			<xsd:element name="assujTva" type="xsd:boolean" />
 			<xsd:element name="nom" type="xsd:string" />
 			<xsd:element name="pers" type="xsd:string" />
@@ -75,7 +73,6 @@
 			<xsd:element name="language" type="xsd:string" />
 			<xsd:element name="sex" type="xsd:string" />
 			<xsd:element name="function" type="xsd:integer" />
-			<xsd:element name="functionTitle" type="xsd:string" /> <!-- fonctionLibelle -->
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -87,7 +84,6 @@
 			<xsd:element name="inscriptionDate" type="xsd:date" />
 			<xsd:element name="address" type="ADRESS" />
 			<xsd:element name="contact" type="CONTACT"/>
-			<xsd:element name="delta" type="xsd:string" />
 			<xsd:element name="enterpriseEtaNumber" type="xsd:int"/>
 		</xsd:sequence>
 	</xsd:complexType>
