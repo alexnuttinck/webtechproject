@@ -46,7 +46,6 @@
 			<xsd:element name="director" type="DIRECTOR_TYPE" />
 			<xsd:element name="etablissement" type="ETA_TYPE" />
 			<xsd:element name="geometry" type="xsd:string"/>
-			<xsd:element name="others" type="OTHERS"/>
 		</xsd:sequence>
 	</xsd:complexType>
 
@@ -58,8 +57,6 @@
 			<xsd:element name="noEntreprise" type="xsd:int" />
 			<xsd:element name="assujTva" type="xsd:boolean" />
 			<xsd:element name="nom" type="xsd:string" />
-			<xsd:element name="nom1" type="xsd:string" />
-			<xsd:element name="nom2" type="xsd:string" />
 			<xsd:element name="pers" type="xsd:string" />
 			<xsd:element name="sexe" type="xsd:string" />
 			<xsd:element name="adress" type="ADRESS"/>
@@ -103,7 +100,7 @@
 			<xsd:element name="number" type="xsd:string" />
 			<xsd:element name="postalBox" type="xsd:string" />
 			<xsd:element name="postalCode" type="postalCodeType" />
-			<xsd:element name="locality" type="xsd:string" />
+			<xsd:element name="locality" type="xsd:string" />	<!-- Select from acom_nom_m-->
 			<xsd:element name="streetCode" type="xsd:string" />
 		</xsd:sequence>
 	</xsd:complexType>
@@ -118,8 +115,7 @@
 	<xsd:complexType name="JURIDICAL_FORME">
 		<xsd:sequence>
 			<xsd:element name="forme" type="xsd:string"/>
-			<xsd:element name="label1" type="xsd:string"/>
-			<xsd:element name="label2" type="xsd:string"/>
+			<xsd:element name="label" type="xsd:string"/>	<!-- Prendre lib2 (forme complète, non abbréviation -->
 			<xsd:element name="size" type="xsd:string"/>
 			<xsd:element name="sizeLabel" type="xsd:string"/>
 			<xsd:element name="nace" type="xsd:int"/>
@@ -134,19 +130,6 @@
 			<xsd:element name="situation" type="xsd:int"/>
 			<xsd:element name="date" type="xsd:date"/>
 			<xsd:element name="label" type="xsd:string"/>
-		</xsd:sequence>
-	</xsd:complexType>
-
-	<!-- WTF ?? -->
-	<xsd:complexType name="OTHERS">
-		<xsd:sequence>
-			<xsd:element name="streetCode" type="xsd:string"/>
-			<xsd:element name="postCode" type="xsd:string"/>
-			<xsd:element name="adrNoPol" type="xsd:string"/>
-			<xsd:element name="streetName" type="xsd:string"/>
-			<xsd:element name="acomNameM" type="xsd:string"/>
-			<xsd:element name="acomInsCode" type="xsd:string"/>
-			<xsd:element name="ghostAdress" type="xsd:string"/>
 		</xsd:sequence>
 	</xsd:complexType>
 </xsd:schema>
