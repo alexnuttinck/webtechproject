@@ -84,7 +84,6 @@
 			<xsd:element name="inscriptionDate" type="xsd:date" />
 			<xsd:element name="address" type="ADDRESS" />
 			<xsd:element name="contact" type="CONTACT"/>
-			<xsd:element name="enterpriseEtaNumber" type="xsd:int"/>
 		</xsd:sequence>
 	</xsd:complexType>
 
