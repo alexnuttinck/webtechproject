@@ -39,6 +39,12 @@
 			<xsd:pattern value="F|M"/>
 		</xsd:restriction>	
 	</xsd:simpleType>
+	
+	<xsd:simpleType name="LANGUAGE">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="fr|nl|en|de"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 
 
 	<!-- Root element -->
@@ -73,7 +79,7 @@
 			<xsd:element name="sex" type="xsd:string" />
 			<xsd:element name="address" type="ADDRESS"/>
 			<xsd:element name="contact" type="CONTACT"/>
-			<xsd:element name="language" type="xsd:string"/>
+			<xsd:element name="language" type="LANGUAGE"/>
 			<xsd:element name="juridicalForme" type="JURIDICAL_FORME"/>
 		</xsd:sequence>
 	</xsd:complexType>
@@ -84,7 +90,7 @@
 		<xsd:sequence>
 			<xsd:element name="name" type="xsd:string" />
 			<xsd:element name="firstname" type="xsd:string" />
-			<xsd:element name="language" type="xsd:string" />
+			<xsd:element name="language" type="LANGUAGE" />
 			<xsd:element name="sex" type="SEX" />
 			<xsd:element name="function" type="xsd:string" />
 		</xsd:sequence>
