@@ -25,7 +25,7 @@
 
 	<xsd:complexType name="ROOT">
 		<xsd:sequence>
-			<xsd:element name="GlhCafegeo" type="GLH_CAFE_GEO" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="GlhCafe" type="GLH_CAFE_GEO" minOccurs="1" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	
