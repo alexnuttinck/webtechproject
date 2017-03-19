@@ -5,6 +5,15 @@
 	<!-- Root element -->
 	<xsd:element name="root" type="ROOT"/>
 
+	<xsd:simpleType name="phoneNumberType">
+		<xsd:restriction base="xsd:string"> 
+			<xsd:pattern value="0[1-9]{2}/[0-9]{2}.[0-9]{2}.[0-9]{2}"/> 	<!-- 0ZZ CC CC CC -->
+			<xsd:pattern value="0[1-9]/[0-9]{3}.[0-9]{2}.[0-9]{2}"/> 		<!-- 0Z CCC CC CC -->
+			<xsd:pattern value="0[1-9]{3}/[0-9]{2}.[0-9]{2}.[0-9]{2}"/>		<!-- 045C CC CC CC -->
+			<xsd:minLength value="12"></xsd:minLength>
+			<xsd:maxLength value="13"></xsd:maxLength>
+		</xsd:restriction>
+	</xsd:simpleType>
 
 	<!-- Complex types definition -->
 
@@ -28,9 +37,9 @@
 	
 	<xsd:complexType name="ADDRESS">
 		<xsd:sequence>
-			<xsd:element name="address" type="xs:string" />
-			<xsd:element name="number" type="xs:integer" />
-			<xsd:element name="streetCode" type="xs:integer" />
+			<xsd:element name="address" type="xsd:string" />
+			<xsd:element name="number" type="xsd:integer" />
+			<xsd:element name="streetCode" type="xsd:integer" />
 			<xsd:element name="postCode">
 				<xsd:simpleType>
 					<xsd:restriction base="xsd:string">
@@ -40,42 +49,42 @@
 					</xsd:restriction>
 				</xsd:simpleType>
 			</xsd:element>
-			<xsd:element name="town" type="xs:string" />
-			<xsd:element name="locality" type="xs:string" />
-			<xsd:element name="sLocality" type="xs:string" />
-			<xsd:element name="zone" type="xs:integer" /> <!-- 1,2 ?? -->
+			<xsd:element name="town" type="xsd:string" />
+			<xsd:element name="locality" type="xsd:string" />
+			<xsd:element name="sLocality" type="xsd:string" />
+			<xsd:element name="zone" type="xsd:integer" /> <!-- 1,2 ?? -->
 		</xsd:sequence>
 	</xsd:complexType>
 
 	<xsd:complexType name="NAME">
 		<xsd:sequence>
-			<xsd:element name="registrationNb" type="xs:integer" />
-			<xsd:element name="name" type="xs:string" />
+			<xsd:element name="registrationNb" type="xsd:integer" />
+			<xsd:element name="name" type="xsd:string" />
 		</xsd:sequence>
 	</xsd:complexType>
 
 	<xsd:complexType name="OWNER">
 		<xsd:sequence>
-			<xsd:element name="owner" type="xs:string" />
-			<xsd:element name="tel" type="xs:string" />
+			<xsd:element name="owner" type="xsd:string" />
+			<xsd:element name="tel" type="phoneNumberType" />
 		</xsd:sequence>
 	</xsd:complexType>
 
 	<xsd:complexType name="SETTINGS">
 		<xsd:sequence>
-			<xsd:element name="activity" type="xs:string" />
-			<xsd:element name="sActivity" type="xs:string" />
-			<xsd:element name="typeBeverage" type="xs:string" />
-			<xsd:element name="category" type="xs:string" />
-			<xsd:element name="nbM2" type="xs:integer" />
-			<xsd:element name="nbMonth" type="xs:integer" />
+			<xsd:element name="activity" type="xsd:string" />
+			<xsd:element name="sActivity" type="xsd:string" />
+			<xsd:element name="typeBeverage" type="xsd:string" />
+			<xsd:element name="category" type="xsd:string" />
+			<xsd:element name="nbM2" type="xsd:integer" />
+			<xsd:element name="nbMonth" type="xsd:integer" />
 			<xsd:element name="geometry" type="xsd:string"/>
 			
 			<xsd:element name="TERRACE">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="terrace" type="xs:boolean" />
-						<xsd:element name="typeTerrace" type="xs:string" /> <!-- A ciel ouvert -->
+						<xsd:element name="terrace" type="xsd:boolean" />
+						<xsd:element name="typeTerrace" type="xsd:string" /> <!-- A ciel ouvert -->
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
@@ -86,10 +95,10 @@
 
 	<xsd:complexType name="JURIDICAL">
 		<xsd:sequence>
-			<xsd:element name="dateLicense" type="xs:date" />
-			<xsd:element name="dateOpen" type="xs:date" />
-			<xsd:element name="dateClose" type="xs:date" />
-			<xsd:element name="license" type="xs:string" /> <!-- PDF -->
+			<xsd:element name="dateLicense" type="xsd:date" />
+			<xsd:element name="dateOpen" type="xsd:date" />
+			<xsd:element name="dateClose" type="xsd:date" />
+			<xsd:element name="license" type="xsd:string" /> <!-- PDF -->
 		</xsd:sequence>
 	</xsd:complexType>
 
