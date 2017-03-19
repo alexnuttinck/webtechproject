@@ -24,7 +24,7 @@
 	</xsd:simpleType>
 
 	
-	<xsd:simpleType name="phoneNumber">
+	<xsd:simpleType name="phoneNumberType">
 		<xsd:restriction base="xsd:string"> 
 			<xsd:pattern value="0[1-9]{2}/[0-9]{2}.[0-9]{2}.[0-9]{2}"/> 	<!-- 0ZZ CC CC CC -->
 			<xsd:pattern value="0[1-9]/[0-9]{3}.[0-9]{2}.[0-9]{2}"/> 		<!-- 0Z CCC CC CC -->
@@ -34,15 +34,15 @@
 		</xsd:restriction>
 	</xsd:simpleType>
 
-	<xsd:simpleType name="SEX">
+	<xsd:simpleType name="sexType">
 		<xsd:restriction base="xsd:string">
 			<xsd:pattern value="F|M"/>
 		</xsd:restriction>	
 	</xsd:simpleType>
 	
-	<xsd:simpleType name="LANGUAGE">
+	<xsd:simpleType name="languageType">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="fr|nl|en|de"/>
+			<xsd:pattern value="fr|nl|de"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 
@@ -79,7 +79,7 @@
 			<xsd:element name="sex" type="xsd:string" />
 			<xsd:element name="address" type="ADDRESS"/>
 			<xsd:element name="contact" type="CONTACT"/>
-			<xsd:element name="language" type="LANGUAGE"/>
+			<xsd:element name="language" type="languageType"/>
 			<xsd:element name="juridicalForme" type="JURIDICAL_FORME"/>
 		</xsd:sequence>
 	</xsd:complexType>
@@ -90,8 +90,8 @@
 		<xsd:sequence>
 			<xsd:element name="name" type="xsd:string" />
 			<xsd:element name="firstname" type="xsd:string" />
-			<xsd:element name="language" type="LANGUAGE" />
-			<xsd:element name="sex" type="SEX" />
+			<xsd:element name="language" type="languageType" />
+			<xsd:element name="sex" type="sexType" />
 			<xsd:element name="function" type="xsd:string" />
 		</xsd:sequence>
 	</xsd:complexType>
@@ -122,7 +122,7 @@
 
 	<xsd:complexType name="CONTACT">
 		<xsd:sequence>
-			<xsd:element name="tel" type="phoneNumber"/>
+			<xsd:element name="tel" type="phoneNumberType"/>
 			<xsd:element name="email" type="emailType"/>
 		</xsd:sequence>
 	</xsd:complexType>
@@ -131,7 +131,7 @@
 		<xsd:sequence>
 			<xsd:element name="form" type="xsd:string"/>
 			<xsd:element name="label" type="xsd:string"/>	<!-- Prendre lib2 (forme complète, non abbréviation -->
-			<xsd:element name="size" type="xsd:string"/>
+			<xsd:element name="size" type="xsd:int"/>
 			<xsd:element name="sizeLabel" type="xsd:string"/>
 			<xsd:element name="nace" type="xsd:int"/>
 			<xsd:element name="naceLabel" type="xsd:string"/>
