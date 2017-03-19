@@ -10,12 +10,12 @@
 
 	<xsd:complexType name="ROOT">
 		<xsd:sequence>
-			<xsd:element name="Glh_Cafe_geo" type="GLH_CAFE_GEO" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="Glh_restaurant_geo" type="GLH_RESTAURANT_GEO" minOccurs="1" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	
 	
-	<xsd:complexType name="GLH_CAFE_GEO">
+	<xsd:complexType name="GLH_RESTAURANT_GEO">
 		<xsd:sequence>
 			<xsd:element name="address" type="ADDRESS" />
 			<xsd:element name="name" type="NAME" />
