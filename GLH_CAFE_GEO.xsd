@@ -47,7 +47,6 @@
 			<xsd:element name="number" type="xsd:integer" />
 			<xsd:element name="streetCode" type="xsd:integer" />
 			<xsd:element name="postCode" type="postalCodeType">
-			</xsd:element>
 			<xsd:element name="town" type="xsd:string" />
 			<xsd:element name="locality" type="xsd:string" />
 			<xsd:element name="sLocality" type="xsd:string" />
