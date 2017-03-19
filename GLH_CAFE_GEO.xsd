@@ -4,6 +4,12 @@
 	
 	<!-- Root element -->
 	<xsd:element name="root" type="ROOT"/>
+	
+	<xsd:simpleType name="postalCodeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="5[0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 
 	<xsd:simpleType name="phoneNumberType">
 		<xsd:restriction base="xsd:string"> 
@@ -40,14 +46,7 @@
 			<xsd:element name="address" type="xsd:string" />
 			<xsd:element name="number" type="xsd:integer" />
 			<xsd:element name="streetCode" type="xsd:integer" />
-			<xsd:element name="postCode">
-				<xsd:simpleType>
-					<xsd:restriction base="xsd:string">
-						<xsd:pattern value="5+[0-9]+"/>
-						<xsd:minLength value="4"/>
-						<xsd:maxLength value="4"/>
-					</xsd:restriction>
-				</xsd:simpleType>
+			<xsd:element name="postCode" type="postalCodeType">
 			</xsd:element>
 			<xsd:element name="town" type="xsd:string" />
 			<xsd:element name="locality" type="xsd:string" />
