@@ -42,8 +42,8 @@
 			</xsd:element>
 			<xsd:element name="town" type="xs:string" />
 			<xsd:element name="locality" type="xs:string" />
-			<xsd:element name="SLocality" type="xs:string" />
-			<xsd:element name="Zone" type="xs:integer" /> <!-- 1,2 ?? -->
+			<xsd:element name="sLocality" type="xs:string" />
+			<xsd:element name="zone" type="xs:integer" /> <!-- 1,2 ?? -->
 		</xsd:sequence>
 	</xsd:complexType>
 
