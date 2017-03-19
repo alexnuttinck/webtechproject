@@ -41,7 +41,7 @@
 
 	<xsd:complexType name="ECON_ENTREPRISES_GEO">
 		<xsd:sequence>
-			<xsd:element name="entreprise" type="ENTREPRISE" />
+			<xsd:element name="enterprise" type="ENTERPRISE" />
 			<xsd:element name="director" type="DIRECTOR_TYPE" />
 			<xsd:element name="etablissement" type="ETA_TYPE" />
 			<xsd:element name="geometry" type="xsd:string"/>
@@ -50,14 +50,14 @@
 
 
 	<!-- Entreprise related data -->
-	<xsd:complexType name="ENTREPRISE">
+	<xsd:complexType name="ENTERPRISE">
 		<xsd:sequence>
 			<xsd:element name="noTva" type="xsd:int" />
 			<xsd:element name="assujTva" type="xsd:boolean" />
-			<xsd:element name="nom" type="xsd:string" />
+			<xsd:element name="name" type="xsd:string" />
 			<xsd:element name="pers" type="xsd:string" />
-			<xsd:element name="sexe" type="xsd:string" />
-			<xsd:element name="adress" type="ADRESS"/>
+			<xsd:element name="sex" type="xsd:string" />
+			<xsd:element name="address" type="ADDRESS"/>
 			<xsd:element name="contact" type="CONTACT"/>
 			<xsd:element name="language" type="xsd:string"/>
 			<xsd:element name="juridicalForme" type="JURIDICAL_FORME"/>
@@ -82,7 +82,7 @@
 		<xsd:sequence>
 			<xsd:element name="name" type="xsd:string" />
 			<xsd:element name="inscriptionDate" type="xsd:date" />
-			<xsd:element name="address" type="ADRESS" />
+			<xsd:element name="address" type="ADDRESS" />
 			<xsd:element name="contact" type="CONTACT"/>
 			<xsd:element name="enterpriseEtaNumber" type="xsd:int"/>
 		</xsd:sequence>
@@ -90,7 +90,7 @@
 
 
 	<!-- Adresse physique -->
-	<xsd:complexType name="ADRESS">
+	<xsd:complexType name="ADDRESS">
 		<xsd:sequence>
 			<xsd:element name="street" type="xsd:string" />
 			<xsd:element name="number" type="xsd:string" />
@@ -110,7 +110,7 @@
 
 	<xsd:complexType name="JURIDICAL_FORME">
 		<xsd:sequence>
-			<xsd:element name="forme" type="xsd:string"/>
+			<xsd:element name="form" type="xsd:string"/>
 			<xsd:element name="label" type="xsd:string"/>	<!-- Prendre lib2 (forme complète, non abbréviation -->
 			<xsd:element name="size" type="xsd:string"/>
 			<xsd:element name="sizeLabel" type="xsd:string"/>
