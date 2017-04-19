@@ -1,0 +1,209 @@
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:entreprise="http://live.dbpedia.org/ontology/Company#"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<owl:Ontology rdf:about="http://live.dbpedia.org/ontology/Company"/>
+
+	<!-- OWL Class definition of Company -->
+
+	<owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#Company">
+
+		<owl:DatatypeProperty rdf:ID="noTVA">
+	        <rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+	        <rdfs:range rdf:resource="#tvaFormat"/>
+	    </owl:DatatypeProperty>
+
+		<owl:Restriction>
+	  		<owl:onProperty rdf:resource="#noTVA" />
+	  		<owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+		</owl:Restriction>
+
+		<owl:Restriction>
+	  		<owl:onProperty rdf:resource="#noTVA" />
+	  		<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+		</owl:Restriction>
+
+		<owl:DatatypeProperty rdf:ID="#assujTVA">
+			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+	        <rdfs:range rdf:resource="&xsd;boolean"/>
+	    </owl:DatatypeProperty>
+
+		<owl:DatatypeProperty rdf:ID="#CompanyName">
+	        <rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+	        <rdfs:range rdf:resource="#string"/>
+	    </owl:ObjectProperty>
+
+	    <owl:Class rdf:ID="#Contact">
+
+	    	<owl:DatatypeProperty rdf:ID="#Tel">
+				<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Contact"/>
+	        	<rdfs:range rdf:resource="#Tel"/>
+	    	</owl:DatatypeProperty>
+
+			<owl:DatatypeProperty rdf:ID="Mail">
+	        	<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Contact"/>
+	        	<rdfs:range rdf:resource="#Mail"/>
+	        </owl:ObjectProperty>
+
+    	</owl:Class>
+
+    	<owl:ObjectProperty rdf:ID="hasContact">
+  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+  			<rdfs:range rdf:ressource="#Contact"/>
+		</owl:ObjectProperty>
+
+	    <!-- Fondateur of Company -->
+
+	    <owl:Class rdf:ID="#Fondateur">
+        	<rdfs:subClassOf rdf:resource="#Person"/>
+    	</owl:Class>
+
+	    <owl:ObjectProperty rdf:ID="hasFondateur">
+  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+  			<rdfs:range rdf:ressource="#Fondateur"/>
+		</owl:ObjectProperty>
+
+		<owl:Restriction>
+	  		<owl:onProperty rdf:ressource="#hasFondateur"/>
+	  		<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+		</owl:Restriction>
+
+		<!-- Adresse Legale of Company -->
+
+		<owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#AdresseLegale">
+        	<rdfs:subClassOf rdf:resource="#Address"/>
+
+			<owl:DatatypeProperty rdf:ID="hasStreetCode">
+				<rdfs:domain rdf:resource="#AddressLegale"/>
+		        <rdfs:range rdf:resource="&xsd;string"/>
+		    </owl:DatatypeProperty>
+
+    	</owl:Class>
+
+		<owl:ObjectProperty rdf:ID="hasAdresseLegale">
+  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+  			<rdfs:range rdf:ressource="#AdresseLegale"/>
+		</owl:ObjectProperty>
+
+		<owl:Restriction>
+	  		<owl:onProperty rdf:ressource="#hasAdresseLegale"/>
+	  		<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+		</owl:Restriction>
+
+	    <owl:Restriction>
+	  		<owl:onProperty rdf:ressource="#hasStreetCode"/>
+	  		<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+		</owl:Restriction>
+
+		<!-- Director of Company -->
+
+		<owl:Class rdf:ID="http://live.dbpedia.org/ontology/Company#Director">
+        	<rdfs:subClassOf rdf:resource="#Person"/>
+
+        	<owl:DatatypeProperty rdf:ID="hasFunction">
+				<rdfs:domain rdf:resource="#Director"/>
+	        	<rdfs:range rdf:resource="&xsd;string"/>
+	    	</owl:DatatypeProperty>
+
+	    	<owl:DatatypeProperty rdf:ID="speaksLanguage">
+				<rdfs:domain rdf:resource="#Director"/>
+	        	<rdfs:range rdf:resource="https://www.w3.org/TR/xmlschema-2/#language"/>
+	    	</owl:DatatypeProperty>
+
+   		</owl:Class>
+
+	    <owl:ObjectProperty rdf:ID="hasdirector">
+  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+  			<rdfs:range rdf:ressource="#Director"/>
+		</owl:ObjectProperty>
+
+		<owl:Restriction>
+	  		<owl:onProperty rdf:ressource="#hasdirector"/>
+	  		<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+		</owl:Restriction>
+		
+
+	    <owl:Restriction>
+	  		<owl:onProperty rdf:ressource="#hasFunction"/>
+	  		<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+		</owl:Restriction>
+
+		<!-- Etablissement et adresse of Company -->
+
+	    <owl:DatatypeProperty rdf:ID="hasStreetCode">
+			<rdfs:domain rdf:resource="#Address"/>
+	        <rdfs:range rdf:resource="&xsd;string"/>
+	    </owl:DatatypeProperty>
+
+		<owl:ObjectProperty rdf:ID="hasEtablissement">
+			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+  			<rdfs:range rdf:resource="http://live.dbpedia.org/ontology/Company#Etablissement"/>
+		</owl:ObjectProperty>
+
+		<owl:Restriction>
+	  		<owl:onProperty rdf:resource="#hasEtablissement" />
+	  		<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+		</owl:Restriction>
+
+		<owl:ObjectProperty rdf:ID="hasContact">
+  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Etablissement"/>
+  			<rdfs:range rdf:ressource="#Contact"/>
+		</owl:ObjectProperty>
+
+		<owl:ObjectProperty rdf:ID="hasGeometryEta">
+  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Etablissement"/>
+  			<rdfs:range rdf:ressource="http://data.ign.fr/def/geometrie#Geometry"/>
+		</owl:ObjectProperty>
+
+		<owl:Restriction>
+	  		<owl:onProperty rdf:resource="#hasGeometryEta" />
+	  		<owl:cardinality rdf:datatype="&xsd;int">1</owl:cardinality>
+		</owl:Restriction>
+
+		<owl:ObjectProperty rdf:ID="hasGeometry">
+  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+  			<rdfs:range rdf:ressource="http://data.ign.fr/def/geometrie#Geometry"/>
+		</owl:ObjectProperty>
+
+		<owl:Restriction>
+	  		<owl:onProperty rdf:resource="#hasGeometry" />
+	  		<owl:cardinality rdf:datatype="&xsd;int">1</owl:cardinality>
+		</owl:Restriction>
+
+
+    </owl:Class>
+
+    <!-- OWL SubClass definition (Forme Juridique) of Company -->
+
+	<owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#SA">
+        <rdfs:subClassOf rdf:resource="http://live.dbpedia.org/ontology/Company#FormeJuridique"/>
+    </owl:Class>
+
+	<owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#SPRL">
+	    <rdfs:subClassOf rdf:resource="http://live.dbpedia.org/ontology/Company#FormeJuridique"/>
+	</owl:Class>
+
+    <owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#SPRLU">
+        <rdfs:subClassOf rdf:resource="http://live.dbpedia.org/ontology/Company#FormeJuridique"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#Independant">
+	    <rdfs:subClassOf rdf:resource="http://live.dbpedia.org/ontology/Company#FormeJuridique"/>
+	</owl:Class>
+
+    <!-- OWL SubClass definition (Café Restaurant) of Company -->
+
+    <owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#Restaurant">
+   		<rdfs:subClassOf rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+	</owl:Class>
+
+	<owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#Cafe">
+   		<rdfs:subClassOf rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+	</owl:Class>
+
+</owl:Ontology>	
+
+</rdf:RDF>
