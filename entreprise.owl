@@ -74,7 +74,7 @@
 		<!-- Adresse Legale of Company -->
 
 		<owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#AdresseLegale">
-        	<rdfs:subClassOf rdf:resource="#Address"/>
+        	<rdfs:subClassOf rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
 
 			<owl:DatatypeProperty rdf:ID="hasStreetCode">
 				<rdfs:domain rdf:resource="#AddressLegale"/>
@@ -133,45 +133,59 @@
 
 		<!-- Etablissement et adresse of Company -->
 
-	    <owl:DatatypeProperty rdf:ID="hasStreetCode">
-			<rdfs:domain rdf:resource="#Address"/>
-	        <rdfs:range rdf:resource="&xsd;string"/>
-	    </owl:DatatypeProperty>
+		<owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#Etablissement">
 
-		<owl:ObjectProperty rdf:ID="hasEtablissement">
-			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
-  			<rdfs:range rdf:resource="http://live.dbpedia.org/ontology/Company#Etablissement"/>
-		</owl:ObjectProperty>
+			<owl:Class rdf:about="http://live.dbpedia.org/ontology/Company#AdresseEta">
+		    	<rdfs:subClassOf rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
 
-		<owl:Restriction>
-	  		<owl:onProperty rdf:resource="#hasEtablissement" />
-	  		<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
-		</owl:Restriction>
+				<owl:DatatypeProperty rdf:ID="hasStreetCode">
+					<rdfs:domain rdf:resource="#AdresseEta"/>
+			        <rdfs:range rdf:resource="&xsd;string"/>
+				</owl:DatatypeProperty>
 
-		<owl:ObjectProperty rdf:ID="hasContact">
-  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Etablissement"/>
-  			<rdfs:range rdf:ressource="#Contact"/>
-		</owl:ObjectProperty>
+			</owl:Class>
 
-		<owl:ObjectProperty rdf:ID="hasGeometryEta">
-  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Etablissement"/>
-  			<rdfs:range rdf:ressource="http://data.ign.fr/def/geometrie#Geometry"/>
-		</owl:ObjectProperty>
+		    <owl:DatatypeProperty rdf:ID="hasStreetCode">
+				<rdfs:domain rdf:resource="#AdresseEta"/>
+		        <rdfs:range rdf:resource="&xsd;string"/>
+		    </owl:DatatypeProperty>
 
-		<owl:Restriction>
-	  		<owl:onProperty rdf:resource="#hasGeometryEta" />
-	  		<owl:cardinality rdf:datatype="&xsd;int">1</owl:cardinality>
-		</owl:Restriction>
+			<owl:ObjectProperty rdf:ID="hasEtablissement">
+				<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+					<rdfs:range rdf:resource="http://live.dbpedia.org/ontology/Company#Etablissement"/>
+			</owl:ObjectProperty>
 
-		<owl:ObjectProperty rdf:ID="hasGeometry">
-  			<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
-  			<rdfs:range rdf:ressource="http://data.ign.fr/def/geometrie#Geometry"/>
-		</owl:ObjectProperty>
+			<owl:Restriction>
+		  		<owl:onProperty rdf:resource="#hasEtablissement" />
+		  		<owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+			</owl:Restriction>
 
-		<owl:Restriction>
-	  		<owl:onProperty rdf:resource="#hasGeometry" />
-	  		<owl:cardinality rdf:datatype="&xsd;int">1</owl:cardinality>
-		</owl:Restriction>
+			<owl:ObjectProperty rdf:ID="hasContact">
+					<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Etablissement"/>
+					<rdfs:range rdf:ressource="#Contact"/>
+			</owl:ObjectProperty>
+
+			<owl:ObjectProperty rdf:ID="hasGeometryEta">
+					<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Etablissement"/>
+					<rdfs:range rdf:ressource="http://data.ign.fr/def/geometrie#Geometry"/>
+			</owl:ObjectProperty>
+
+			<owl:Restriction>
+		  		<owl:onProperty rdf:resource="#hasGeometryEta" />
+		  		<owl:cardinality rdf:datatype="&xsd;int">1</owl:cardinality>
+			</owl:Restriction>
+
+			<owl:ObjectProperty rdf:ID="hasGeometry">
+					<rdfs:domain rdf:resource="http://live.dbpedia.org/ontology/Company#Company"/>
+					<rdfs:range rdf:ressource="http://data.ign.fr/def/geometrie#Geometry"/>
+			</owl:ObjectProperty>
+
+			<owl:Restriction>
+		  		<owl:onProperty rdf:resource="#hasGeometry" />
+		  		<owl:cardinality rdf:datatype="&xsd;int">1</owl:cardinality>
+			</owl:Restriction>
+
+		</owl:Class>
 
 
     </owl:Class>
