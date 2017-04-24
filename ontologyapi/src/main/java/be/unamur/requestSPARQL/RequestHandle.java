@@ -18,6 +18,8 @@ public class RequestHandle {
 
         ResultSet resultsQuery = querySPARQL(request);
 
+        if(resultsQuery == null) return "REQUEST ERROR";
+        else{
         // write to a ByteArrayOutputStream
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
@@ -27,12 +29,15 @@ public class RequestHandle {
         String json = new String(outputStream.toByteArray());
 
         return json;
+        }
     }
     
     public static String toXML(String request){    
 
         ResultSet resultsQuery = querySPARQL(request);
 
+        if(resultsQuery == null) return "REQUEST ERROR";
+        else{
         // write to a ByteArrayOutputStream
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
@@ -42,6 +47,7 @@ public class RequestHandle {
         String xml = new String(outputStream.toByteArray());
 
         return xml;
+        }
     }
 
     public static ResultSet querySPARQL(String request){
