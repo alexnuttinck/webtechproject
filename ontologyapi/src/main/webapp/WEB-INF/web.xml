@@ -3,12 +3,8 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-<<<<<<< HEAD
+
 	<display-name>ontologyapi</display-name>
-=======
-	<display-name>ontologyAPI</display-name>
-	
->>>>>>> 8abba4fc80487ca8a277f1f3ef8247e5f7c8c0fd
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -21,17 +17,10 @@
 	<servlet>
 		<servlet-name>Jersey Web Application</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-<<<<<<< HEAD
 		 <init-param>
              <param-name>jersey.config.server.provider.packages</param-name>
              <param-value>be.unamur.ws</param-value>
         </init-param>
-=======
-		<init-param>
-		     <param-name>jersey.config.server.provider.packages</param-name>
-		     <param-value>be.unamur.ws</param-value>
-		</init-param>
->>>>>>> 8abba4fc80487ca8a277f1f3ef8247e5f7c8c0fd
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
