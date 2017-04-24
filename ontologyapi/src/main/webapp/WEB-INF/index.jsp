@@ -18,12 +18,12 @@
 		<p>Type your request below</p>
 		<form role="form" method="post" action="<c:url value="/index"/>">
 			<div class="form-group">
-				<label for="request">SPARQL Request :</label> <input type="text"
-					class="form-control" id="usr">
+				<label for="requestSparql">SPARQL Request :</label> <input type="text"
+					class="form-control" name ="requestSparql">
 			</div>
 
 			<div class="form-group">
-				<label for="type">TYPE Result :</label> <select class="form-control">
+				<label for="type">TYPE Result :</label> <select class="form-control" name ="type">
 					<option>json</option>
 					<option>xml</option>
 				</select>

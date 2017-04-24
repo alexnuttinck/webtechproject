@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 public class Form {
 
 	// Field names
-	public static final String REQUESTSPARQLE = "requestSparqle";
+	public static final String REQUESTSPARQL = "requestSparql";
 	public static final String TYPE = "type";
 	// End field names
 

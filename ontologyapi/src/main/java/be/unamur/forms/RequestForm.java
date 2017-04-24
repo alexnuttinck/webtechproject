@@ -13,18 +13,18 @@ public class RequestForm extends Form {
 	 * @return The result from spraqle request
 	 */
 	public String requestOWL(HttpServletRequest request) {
-		String requestSparqle = getValueField(request, REQUESTSPARQLE);
+		String requestSparql = getValueField(request, REQUESTSPARQL);
 		String type = getValueField(request, TYPE);
 
 		String result="";
 		
 		if (type=="json")
 		{
-			result = RequestHandle.toJson(requestSparqle);
+			result = RequestHandle.toJson(requestSparql);
 		}
 		else 
 		{
-			result = RequestHandle.toXML(requestSparqle);
+			result = RequestHandle.toXML(requestSparql);
 		}
 		
 		return result;

@@ -32,8 +32,8 @@
 	<welcome-file-list>
 		<welcome-file>index</welcome-file>
 	</welcome-file-list>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>Request</servlet-name>
 		<servlet-class>be.unamur.servlets.Request</servlet-class>
 		<load-on-startup>1</load-on-startup>
