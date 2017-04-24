@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/cyril/ontologies/2017/3/untitled-ontology-3#"
+     xml:base="http://www.semanticweb.org/cyril/ontologies/2017/3/untitled-ontology-3"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#tvaFormat -->
+
+    <rdfs:Datatype rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#tvaFormat">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdfs:Datatype>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#hasAdresseLegale -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#hasAdresseLegale"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#hasFondateur -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#hasFondateur">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#hasFondateur"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Fondateur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#hasTVA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#hasTVA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#hasTVA"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#NoTVA"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#isSubjectTVA -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#isSubjectTVA">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#hasTVA"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#AssujTVA"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#AdresseLegale -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#AdresseLegale"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#AssujTVA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#AssujTVA"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Cafe -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Cafe">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Restaurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Contact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Contact"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Directeur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Directeur"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Etablissement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Etablissement"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Fondateur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Fondateur"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#FormeJuridique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#FormeJuridique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Geo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Geo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Langue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Langue"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#NoTVA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#NoTVA"/>
+    
+
+
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Restaurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Restaurant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
