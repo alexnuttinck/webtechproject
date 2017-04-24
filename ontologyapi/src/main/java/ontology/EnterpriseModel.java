@@ -42,5 +42,9 @@ public class EnterpriseModel {
 	    }
 	    return entreprise;
 	}
+	
+	public static OntModel getModel(){
+	    return entreprise;
+	}
 
 }
