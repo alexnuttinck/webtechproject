@@ -14,7 +14,7 @@ import ontology.EnterpriseModel;
 
 public class RequestHandle {
 
-    public String toJson(String request){    
+    public static String toJson(String request){    
 
         ResultSet resultsQuery = querySPARQL(request);
 
@@ -29,7 +29,7 @@ public class RequestHandle {
         return json;
     }
     
-    public String toXML(String request){    
+    public static String toXML(String request){    
 
         ResultSet resultsQuery = querySPARQL(request);
 
@@ -44,7 +44,7 @@ public class RequestHandle {
         return xml;
     }
 
-    public ResultSet querySPARQL(String request){
+    public static ResultSet querySPARQL(String request){
         OntModel enterpriseModel = EnterpriseModel.getModel();
         String queryString = request ;
         Query query = QueryFactory.create(queryString) ;
