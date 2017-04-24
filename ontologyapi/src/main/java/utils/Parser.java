@@ -8,4 +8,12 @@ public class Parser {
 		
 	}
 	
+	public void putCafe(String owlDataFile, OntModel model){
+	
+	}
+	
+	public void putRestaurant(String owlDataFile, OntModel model){
+		
+	}
+	
 }
