@@ -14,6 +14,7 @@
 <body>
 
 	<div class="container">
+	<img src="images/logo_namur_ville.jpg" class="img-rounded" width="209" height="403" alt="Logo Ville de Namur">	
 		<h2>Ville De Namur API</h2>
 		<p>Type your request below</p>
 		<form role="form" method="post" action="<c:url value="/index"/>">
