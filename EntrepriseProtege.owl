@@ -108,9 +108,17 @@
     
 
 
+    <!-- http://data.ign.fr/def/geometrie#Geometry -->
+
+    <owl:Class rdf:about="http://data.ign.fr/def/geometrie#Geometry"/>
+    
+
+
     <!-- http://www.semanticweb.org/Namur/entreprise-ontology#AdresseLegale -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#AdresseLegale"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#AdresseLegale">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/vcard/ns#Address"/>
+    </owl:Class>
     
 
 
@@ -137,7 +145,9 @@
 
     <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Directeur -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Directeur"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Directeur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Personne"/>
+    </owl:Class>
     
 
 
@@ -155,7 +165,9 @@
 
     <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Fondateur -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Fondateur"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Fondateur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Personne"/>
+    </owl:Class>
     
 
 
@@ -169,7 +181,9 @@
 
     <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Geo -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Geo"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Geo">
+        <rdfs:subClassOf rdf:resource="http://data.ign.fr/def/geometrie#Geometry"/>
+    </owl:Class>
     
 
 
@@ -185,11 +199,23 @@
     
 
 
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Personne -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Personne"/>
+    
+
+
     <!-- http://www.semanticweb.org/Namur/entreprise-ontology#Restaurant -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#Restaurant">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Entreprise"/>
     </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/vcard/ns#Address -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/vcard/ns#Address"/>
 </rdf:RDF>
 
 
