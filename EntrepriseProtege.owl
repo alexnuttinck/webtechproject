@@ -460,7 +460,7 @@
                         <xsd:length rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</xsd:length>
                     </rdf:Description>
                     <rdf:Description>
-                        <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BE[0-9]</xsd:pattern>
+                        <xsd:pattern rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BE[0-9]{10}</xsd:pattern>
                     </rdf:Description>
                 </owl:withRestrictions>
             </rdfs:Datatype>
