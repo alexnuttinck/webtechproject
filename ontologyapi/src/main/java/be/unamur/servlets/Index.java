@@ -11,7 +11,7 @@ import be.unamur.forms.RequestForm;
 
 public class Index extends HttpServlet {
 	
-	public static final String ATT_JSON = "json"; 
+	public static final String ATT_RESULT = "result"; 
 
 	private static final long serialVersionUID = 1L;
 
@@ -22,12 +22,12 @@ public class Index extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		RequestForm form = new RequestForm();
-		String json = form.requestOWL(request);
+		String result = form.requestOWL(request);
 		HttpSession session = request.getSession();
 		
-		if (json!=null)
+		if (result!=null)
 		{
-			request.setAttribute(ATT_JSON, json);
+			request.setAttribute(ATT_RESULT, result);
 			this.getServletContext().getRequestDispatcher(Constants.VIEW_REQUEST).forward(request, response);
 		}
 		
