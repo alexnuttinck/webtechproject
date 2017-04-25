@@ -14,17 +14,33 @@
 <body>
 
 	<div class="container">
-	<img src="images/logo_namur_ville.jpg" class="img-rounded" width="209" height="403" alt="Logo Ville de Namur">	
+		<img src="images/logo_namur_ville.jpg" class="img-rounded" width="209"
+			height="403" alt="Logo Ville de Namur">
 		<h2>Ville De Namur API</h2>
 		<p>Type your request below</p>
 		<form role="form" method="post" action="<c:url value="/index"/>">
 			<div class="form-group">
-				<label for="requestSparql">SPARQL Request :</label> <input type="text"
-					class="form-control" name ="requestSparql">
+				<label for="requestSparql">SPARQL Request :</label> <input
+					type="text" class="form-control" name="requestSparql">
 			</div>
 
+			<c:if test="${ !empty sessionAlertMessage }">
+				<div
+					class="alert alert-${sessionAlertType} }warning alert-dismissible"
+					role="alert">
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					${sessionAlertMessage}
+				</div>
+				<c:remove var="sessionAlertMessage" />
+				<c:remove var="sessionAlertType" />
+			</c:if>
+
 			<div class="form-group">
-				<label for="type">TYPE Result :</label> <select class="form-control" name ="type">
+				<label for="type">TYPE Result :</label> <select class="form-control"
+					name="type">
 					<option>json</option>
 					<option>xml</option>
 				</select>

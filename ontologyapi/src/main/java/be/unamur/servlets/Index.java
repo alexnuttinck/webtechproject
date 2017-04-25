@@ -25,8 +25,7 @@ public class Index extends HttpServlet {
 		String result = form.requestOWL(request);
 		HttpSession session = request.getSession();
 		
-		if (result!=null)
-		{
+		if (form.isSuccessful()) {
 			request.setAttribute(ATT_RESULT, result);
 			this.getServletContext().getRequestDispatcher(Constants.VIEW_REQUEST).forward(request, response);
 		}
@@ -34,6 +33,7 @@ public class Index extends HttpServlet {
 		else
 		{
 		response.sendRedirect(request.getContextPath() + Constants.CONTROLLER_INDEX);
+		Constants.alert(session, Constants.AlertType.ERROR, "Requête SPARQL Erronée"); 
 		}			
 	}
 }
