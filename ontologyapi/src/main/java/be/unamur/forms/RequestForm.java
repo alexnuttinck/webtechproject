@@ -1,6 +1,7 @@
 package be.unamur.forms;
 
 import javax.servlet.http.HttpServletRequest;
+
 import be.unamur.requestSPARQL.RequestHandle;;
 
 public class RequestForm extends Form {
@@ -16,17 +17,31 @@ public class RequestForm extends Form {
 		String requestSparql = getValueField(request, REQUESTSPARQL);
 		String type = getValueField(request, TYPE);
 
+		if(!requestSparql.matches(".*SELECT.*"))
+				{
+			setError(REQUESTSPARQL, "not select word");
+				}
+		
 		String result="";
 		
-		if (type=="json")
+		if (type.equals("json"))
 		{
-			result = RequestHandle.toJson(requestSparql);
+			try {result = RequestHandle.toJson(requestSparql);}
+			catch (Exception e)
+			{setError(REQUESTSPARQL, "spraql request error");}
 		}
 		else 
 		{
-			result = RequestHandle.toXML(requestSparql);
+			try{result = RequestHandle.toXML(requestSparql);}
+			catch (Exception e)
+			{setError(REQUESTSPARQL, "spraql request error");}
 		}
+
 		
+		if (!hasErrors()) {
+			setSuccessful(true);
+		}
+			
 		return result;
 	}
 
