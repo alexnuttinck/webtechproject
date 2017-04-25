@@ -24,17 +24,21 @@ public class RequestForm extends Form {
 		
 		String result="";
 		
-		if (!hasErrors()) {
-			
-			if (type=="json")
-			{
-				result = RequestHandle.toJson(requestSparql);
-			}
-			else 
-			{
-				result = RequestHandle.toXML(requestSparql);
-			}
+		if (type.equals("json"))
+		{
+			try {result = RequestHandle.toJson(requestSparql);}
+			catch (Exception e)
+			{setError(REQUESTSPARQL, "spraql request error");}
+		}
+		else 
+		{
+			try{result = RequestHandle.toXML(requestSparql);}
+			catch (Exception e)
+			{setError(REQUESTSPARQL, "spraql request error");}
+		}
 
+		
+		if (!hasErrors()) {
 			setSuccessful(true);
 		}
 			
