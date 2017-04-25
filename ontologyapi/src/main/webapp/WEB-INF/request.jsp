@@ -63,7 +63,14 @@
 			<div class="col-6">
 				<label for="result">SPARQL Result :</label>
 				<div class="form-group">
+				<!-- format xml -->
+				<pre lang="xml">
 					<c:out value="${ result }" />
+				</pre>
+				<!-- format json -->
+				<pre id="json">
+					<c:out value="${ result }" />
+				</pre>
 				</div>
 			</div>
 		</div>
