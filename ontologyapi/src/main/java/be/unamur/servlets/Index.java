@@ -8,10 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import be.unamur.forms.RequestForm;
+import be.unamur.forms.Form;
 
 public class Index extends HttpServlet {
 	
 	public static final String ATT_RESULT = "result"; 
+	public static final String ATT_TYPE = "type"; 
 
 	private static final long serialVersionUID = 1L;
 
@@ -23,11 +25,14 @@ public class Index extends HttpServlet {
 
 		RequestForm form = new RequestForm();
 		String result = form.requestOWL(request);
+		String type = Form.getValueField(request, Form.TYPE);
 		HttpSession session = request.getSession();
 		
 		if (form.isSuccessful()) {
+			
 			request.setAttribute(ATT_RESULT, result);
-			this.getServletContext().getRequestDispatcher(Constants.VIEW_REQUEST).forward(request, response);
+			request.setAttribute(ATT_TYPE, type);
+			this.getServletContext().getRequestDispatcher(Constants.VIEW_INDEX).forward(request, response);
 		}
 		
 		else

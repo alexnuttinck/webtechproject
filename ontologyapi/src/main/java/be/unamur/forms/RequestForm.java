@@ -16,33 +16,38 @@ public class RequestForm extends Form {
 	public String requestOWL(HttpServletRequest request) {
 		String requestSparql = getValueField(request, REQUESTSPARQL);
 		String type = getValueField(request, TYPE);
-
-		if(!requestSparql.matches(".*SELECT.*"))
-				{
-			setError(REQUESTSPARQL, "not select word");
-				}
-		
 		String result="";
 		
-		if (type.equals("json"))
+		if(requestSparql == null)
 		{
-			try {result = RequestHandle.toJson(requestSparql);}
-			catch (Exception e)
-			{setError(REQUESTSPARQL, "spraql request error");}
-		}
-		else 
+			setError(REQUESTSPARQL, "is null");
+		}else
 		{
-			try{result = RequestHandle.toXML(requestSparql);}
-			catch (Exception e)
-			{setError(REQUESTSPARQL, "spraql request error");}
+
+			if(!requestSparql.matches(".*SELECT.*"))
+			{
+				setError(REQUESTSPARQL, "not select word");
+			}
+
+			if (type.equals("json"))
+			{
+				try {result = RequestHandle.toJson(requestSparql);}
+				catch (Exception e)
+				{setError(REQUESTSPARQL, "spraql request error");}
+			}
+			else 
+			{
+				try{result = RequestHandle.toXML(requestSparql);}
+				catch (Exception e)
+				{setError(REQUESTSPARQL, "spraql request error");}
+			}
 		}
 
-		
+
 		if (!hasErrors()) {
 			setSuccessful(true);
 		}
-			
+
 		return result;
 	}
-
 }

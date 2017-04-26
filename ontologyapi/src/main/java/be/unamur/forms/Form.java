@@ -45,7 +45,7 @@ public class Form {
 		errors.put(field, message);
 	}
 
-	protected String getValueField(HttpServletRequest request, String field) {
+	public static String getValueField(HttpServletRequest request, String field) {
 		String value = request.getParameter(field);
 		if (value == null || value.trim().length() == 0) {
 			return null;
