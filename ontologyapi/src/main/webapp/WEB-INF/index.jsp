@@ -18,16 +18,17 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-2">
-				<img class="img-responsive" src="images/logo_namur_ville.jpg" class="img-rounded"
-					width="209" height="403" alt="Logo Ville de Namur">
+				<img class="img-responsive" src="images/logo_namur_ville.jpg"
+					class="img-rounded" width="209" height="403"
+					alt="Logo Ville de Namur">
 			</div>
 			<div class="col-sm-4">
 				<h2>Ville De Namur API</h2>
 				<p>Type your request below</p>
 				<form role="form" method="post" action="<c:url value="/index"/>">
 					<div class="form-group">
-						<label for="requestSparql">SPARQL Request :</label> <textarea
-							class="form-control" rows="5"  name="requestSparql"></textarea>
+						<label for="requestSparql">SPARQL Request :</label>
+						<textarea class="form-control" rows="5" name="requestSparql"></textarea>
 					</div>
 
 					<c:if test="${ !empty sessionAlertMessage }">
@@ -61,23 +62,26 @@
 			</div>
 
 
+			<div class="col-sm-5">
 
-			<c:if test="${ !empty result }">
-				<div class="col-sm-5">
+				<c:if test="${ !empty result }">
 					<label for="result">SPARQL Result :</label>
 					<div class="form-group">
-						<!-- format xml -->
-						<pre lang="xml">
+						<c:if test="${type eq 'xml'}">
+							<!-- format xml -->
+							<pre lang="xml">
 					<c:out value="${ result }" />
-				</pre>
-						<!-- format json -->
-						<pre id="json">
+						</pre>
+						</c:if>
+						<c:if test="${ type eq 'json' }">
+							<!-- format json -->
+							<pre id="json">
 					<c:out value="${ result }" />
-				</pre>
-
+						</pre>
+						</c:if>
 					</div>
-				</div>
-			</c:if>
+				</c:if>
+			</div>
 		</div>
 	</div>
 </body>
