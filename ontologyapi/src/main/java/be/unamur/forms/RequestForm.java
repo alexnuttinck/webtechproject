@@ -33,13 +33,16 @@ public class RequestForm extends Form {
 			{
 				try {result = RequestHandle.toJson(requestSparql);}
 				catch (Exception e)
-				{setError(REQUESTSPARQL, "spraql request error");}
+				{	
+					System.out.println(e.getMessage());
+					setError(REQUESTSPARQL, "spraql request error");}
 			}
 			else 
 			{
 				try{result = RequestHandle.toXML(requestSparql);}
 				catch (Exception e)
-				{setError(REQUESTSPARQL, "spraql request error");}
+				{	System.out.println(e.getMessage());
+					setError(REQUESTSPARQL, "spraql request error");}
 			}
 		}
 

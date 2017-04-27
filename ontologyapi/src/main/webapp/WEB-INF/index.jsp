@@ -69,13 +69,12 @@
 					<div class="form-group">
 						<c:if test="${type eq 'xml'}">
 							<!-- format xml -->
-							<pre lang="xml">
+							<pre>
 					<c:out value="${ result }" />
-						</pre>
+							</pre>
 						</c:if>
-						<c:if test="${ type eq 'json' }">
-							<!-- format json -->
-							<pre id="json">
+						<c:if test="${type eq 'json'}">
+						<pre>
 					<c:out value="${ result }" />
 						</pre>
 						</c:if>

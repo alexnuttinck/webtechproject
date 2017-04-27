@@ -15,6 +15,8 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 
 import ontology.EnterpriseModel;
+import ontology.CafeModel;
+import ontology.RestaurantModel;
 
 // TODO check if field has value before attempting to write
 // TODO GEOM data
@@ -48,11 +50,11 @@ public class Parser {
 	}
 	
 	public void putCafe(String owlDataFile, OntModel model){
-	
+		model = CafeModel.getOntologyModel(owlDataFile);
 	}
 	
 	public void putRestaurant(String owlDataFile, OntModel model){
-		
+		model = RestaurantModel.getOntologyModel(owlDataFile);
 	}
 	
 	/**
