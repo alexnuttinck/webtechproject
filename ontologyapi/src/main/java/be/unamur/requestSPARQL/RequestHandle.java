@@ -1,6 +1,7 @@
 package be.unamur.requestSPARQL;
 
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.query.* ;
@@ -51,20 +52,24 @@ public class RequestHandle {
     }
 
     public static ResultSet querySPARQL(String request){
-        OntModel enterpriseModel = EnterpriseModel.getModel();
+    	
+    	String path = "C:\\Users\\nutti\\workspace\\webtechproject\\ontologyapi\\src\\main\\ressources\\test.rdf";
+    	System.out.println(path);
+        OntModel enterpriseModel = EnterpriseModel.getOntologyModel(path);
         String queryString = request ;
+        System.out.println(queryString);
         Query query = QueryFactory.create(queryString) ;
-        try (QueryExecution qexec = QueryExecutionFactory.create(query, enterpriseModel)) {
-            ResultSet results = qexec.execSelect() ;
-            for ( ; results.hasNext() ; )
-            {
-                QuerySolution soln = results.nextSolution() ;
-                RDFNode x = soln.get("varName") ;       // Get a result variable by name.
-                Resource r = soln.getResource("VarR") ; // Get a result variable - must be a resource
-                Literal l = soln.getLiteral("VarL") ;   // Get a result variable - must be a literal
-            }
-            return results;
+        QueryExecution qexec = QueryExecutionFactory.create(query, enterpriseModel);
+        ResultSet results = null;
+        try{
+            //results = qexec.execSelect() ;
+            results = qexec.execSelect() ;
+            
+        } finally {
+        //	qexec.close();
         }
+        return results;
+        //return null;
     }
 
 }

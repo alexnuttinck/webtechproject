@@ -37,9 +37,9 @@ public class Index extends HttpServlet {
 					{response.setContentType("text/xml;charset=UTF-8");}
 			else {
 			response.setContentType("application/json");
-			ObjectMapper mapper = new ObjectMapper();
-			Object json = mapper.readValue(result, Object.class);
-			result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+			//ObjectMapper mapper = new ObjectMapper();
+			//Object json = mapper.readValue(result, Object.class);
+			//result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
 			}
 			
 			request.setAttribute(ATT_RESULT, result);
