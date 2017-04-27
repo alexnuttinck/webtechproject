@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.codehaus.jackson.map.ObjectMapper;
+
 import be.unamur.forms.RequestForm;
 import be.unamur.forms.Form;
 
@@ -28,10 +31,20 @@ public class Index extends HttpServlet {
 		String type = Form.getValueField(request, Form.TYPE);
 		HttpSession session = request.getSession();
 		
-		if (form.isSuccessful()) {
+		if (!form.isSuccessful()) {
+			
+			if (type.equals("xml"))
+					{response.setContentType("text/xml;charset=UTF-8");}
+			else {
+			response.setContentType("application/json");
+			ObjectMapper mapper = new ObjectMapper();
+			Object json = mapper.readValue(result, Object.class);
+			result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+			}
 			
 			request.setAttribute(ATT_RESULT, result);
 			request.setAttribute(ATT_TYPE, type);
+			
 			this.getServletContext().getRequestDispatcher(Constants.VIEW_INDEX).forward(request, response);
 		}
 		
