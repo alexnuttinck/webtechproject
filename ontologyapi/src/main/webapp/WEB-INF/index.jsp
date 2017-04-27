@@ -65,7 +65,7 @@
 					<form action="index" method="post" action="<c:url value="/index"/>">
 						<input type="hidden" name="requestSparql"
 							value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
-SELECT ?nomLegal ?NoTVA
+SELECT DISTINCT ?nomLegal ?NoTVA
 WHERE {
     ?Entreprise entreprise:nomLegal ?nomLegal.
       ?Entreprise entreprise:hasTVA ?tva.
@@ -77,11 +77,14 @@ WHERE {
 					<form action="index" method="post" action="<c:url value="/index"/>">
 						<input type="hidden" name="requestSparql"
 							value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
-SELECT ?nomLegal ?NoTVA
+PREFIX vcard:  &lt;http://www.w3.org/2006/vcard/ns#&gt;
+SELECT DISTINCT ?nomLegal ?streetAddress ?postalcode ?locality 
 WHERE {
-    ?Entreprise entreprise:nomLegal ?nomLegal.
-      ?Entreprise entreprise:hasTVA ?tva.
-      ?tva entreprise:NoTVA ?NoTVA
+	?Entreprise entreprise:nomLegal ?nomLegal.
+     ?Entreprise entreprise:hasAdresseLegale ?adresse.
+     ?adresse vcard:street-address ?streetAddress.
+   	?adresse vcard:postal-code ?postalcode.
+    ?adresse vcard:locality ?locality. 
 }" />
 						<input type="submit" class="btn btn-primary" value="Example2"
 							name="requestSparql" id="SubmitRequestButton" />
@@ -89,7 +92,7 @@ WHERE {
 					<form action="index" method="post" action="<c:url value="/index"/>">
 						<input type="hidden" name="requestSparql"
 							value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
-SELECT ?nomLegal ?nom ?prenom
+SELECT DISTINCT ?nomLegal ?nom ?prenom
 WHERE {
 	?Entreprise entreprise:nomLegal ?nomLegal.
     ?Entreprise entreprise:hasDirecteur ?directeur .
