@@ -1,0 +1,162 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+    xmlns:entreprise="http://www.semanticweb.org/Namur/entreprise-ontology#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    
+  <rdf:Description rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#211085163">
+    <entreprise:hasTVA>
+      <entreprise:NoTVA>
+        <entreprise:NoTVA>BE211085163</entreprise:NoTVA>
+      </entreprise:NoTVA>
+    </entreprise:hasTVA>
+    <entreprise:hasContact>
+      <entreprise:Contact>
+        <vcard:tel>081/33.70.11</vcard:tel>
+        <vcard:email>info@cpasnamur.be</vcard:email>
+      </entreprise:Contact>
+    </entreprise:hasContact>
+    <entreprise:isEstablished>
+      <rdf:Description rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#HOME LA CLOSIERE">
+        <entreprise:subscribed>1977-04-01</entreprise:subscribed>
+        <entreprise:nomLegal>HOME LA CLOSIERE</entreprise:nomLegal>
+        <entreprise:hasAdresseLegale>
+          <rdf:Description rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#2, Avenue de la Closière">
+            <entreprise:hasStreetCode>50027419</entreprise:hasStreetCode>
+            <vcard:locality>SAINT-SERVAIS</vcard:locality>
+            <vcard:region>Namur</vcard:region>
+            <vcard:postal-code>5002</vcard:postal-code>
+            <vcard:country-name>Belgique</vcard:country-name>
+            <vcard:street-address>2, Avenue de la Closière</vcard:street-address>
+          </rdf:Description>
+        </entreprise:hasAdresseLegale>
+        <entreprise:hasContact>
+          <entreprise:Contact>
+            <vcard:tel>081/23.12.51</vcard:tel>
+            <vcard:email></vcard:email>
+          </entreprise:Contact>
+        </entreprise:hasContact>
+      </rdf:Description>
+    </entreprise:isEstablished>
+    <entreprise:isSubjectTVA>
+      <entreprise:AssujTVA>
+        <entreprise:AssujTVA>Yes</entreprise:AssujTVA>
+      </entreprise:AssujTVA>
+    </entreprise:isSubjectTVA>
+    <entreprise:hasTVA>
+      <entreprise:NoTVA>
+        <entreprise:NoTVA>BE211085163</entreprise:NoTVA>
+      </entreprise:NoTVA>
+    </entreprise:hasTVA>
+    <entreprise:isSubjectTVA>
+      <entreprise:AssujTVA>
+        <entreprise:AssujTVA>Yes</entreprise:AssujTVA>
+      </entreprise:AssujTVA>
+    </entreprise:isSubjectTVA>
+    <entreprise:isSubjectTVA>
+      <entreprise:AssujTVA>
+        <entreprise:AssujTVA>Yes</entreprise:AssujTVA>
+      </entreprise:AssujTVA>
+    </entreprise:isSubjectTVA>
+    <entreprise:hasDirecteur>
+      <rdf:Description rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#PhilippeDefeyt">
+        <entreprise:prenom>Philippe</entreprise:prenom>
+        <entreprise:nomDeFamille>Defeyt</entreprise:nomDeFamille>
+        <entreprise:genre>Male</entreprise:genre>
+        <entreprise:function>Président du conseil d'administration / conseil de gérance</entreprise:function>
+        <vcard:hasLanguage>FR</vcard:hasLanguage>
+      </rdf:Description>
+    </entreprise:hasDirecteur>
+    <entreprise:hasFormeJuri>
+      <entreprise:SA>
+        <entreprise:subscribed>1968-01-01</entreprise:subscribed>
+        <entreprise:naceLabel>C.P.A.S.</entreprise:naceLabel>
+        <entreprise:nace>75115</entreprise:nace>
+        <entreprise:label>Centre Public d'Actions Sociales</entreprise:label>
+      </entreprise:SA>
+    </entreprise:hasFormeJuri>
+    <entreprise:hasContact>
+      <entreprise:Contact>
+        <vcard:tel>081/33.70.11</vcard:tel>
+        <vcard:email>info@cpasnamur.be</vcard:email>
+      </entreprise:Contact>
+    </entreprise:hasContact>
+    <entreprise:hasContact>
+      <entreprise:Contact>
+        <vcard:tel>081/33.70.11</vcard:tel>
+        <vcard:email>info@cpasnamur.be</vcard:email>
+      </entreprise:Contact>
+    </entreprise:hasContact>
+    <entreprise:hasFormeJuri>
+      <entreprise:SA>
+        <entreprise:subscribed>1968-01-01</entreprise:subscribed>
+        <entreprise:naceLabel>C.P.A.S.</entreprise:naceLabel>
+        <entreprise:nace>75115</entreprise:nace>
+        <entreprise:label>Centre Public d'Actions Sociales</entreprise:label>
+      </entreprise:SA>
+    </entreprise:hasFormeJuri>
+    <entreprise:hasFormeJuri>
+      <entreprise:SA>
+        <entreprise:subscribed>1968-01-01</entreprise:subscribed>
+        <entreprise:naceLabel>C.P.A.S.</entreprise:naceLabel>
+        <entreprise:nace>75115</entreprise:nace>
+        <entreprise:label>Centre Public d'Actions Sociales</entreprise:label>
+      </entreprise:SA>
+    </entreprise:hasFormeJuri>
+    <entreprise:hasAdresseLegale>
+      <rdf:Description rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#165, Rue de Dave">
+        <vcard:locality>DAVE</vcard:locality>
+        <entreprise:hasStreetCode>51005514</entreprise:hasStreetCode>
+        <vcard:locality>JAMBES</vcard:locality>
+        <vcard:region>Namur</vcard:region>
+        <vcard:postal-code>5100</vcard:postal-code>
+        <vcard:country-name>Belgique</vcard:country-name>
+        <vcard:street-address>165, Rue de Dave</vcard:street-address>
+      </rdf:Description>
+    </entreprise:hasAdresseLegale>
+    <entreprise:hasTVA>
+      <entreprise:NoTVA>
+        <entreprise:NoTVA>BE211085163</entreprise:NoTVA>
+      </entreprise:NoTVA>
+    </entreprise:hasTVA>
+    <vcard:hasLanguage>FR</vcard:hasLanguage>
+    <entreprise:isEstablished>
+      <rdf:Description rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#MAISON D&apos;HARSCAMP">
+        <entreprise:subscribed>1977-04-01</entreprise:subscribed>
+        <entreprise:nomLegal>MAISON D'HARSCAMP</entreprise:nomLegal>
+        <entreprise:hasAdresseLegale>
+          <rdf:Description rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#2, Rue Saint-Nicolas">
+            <entreprise:hasStreetCode>50001833</entreprise:hasStreetCode>
+            <vcard:locality>NAMUR</vcard:locality>
+            <vcard:region>Namur</vcard:region>
+            <vcard:postal-code>5000</vcard:postal-code>
+            <vcard:country-name>Belgique</vcard:country-name>
+            <vcard:street-address>2, Rue Saint-Nicolas</vcard:street-address>
+          </rdf:Description>
+        </entreprise:hasAdresseLegale>
+        <entreprise:hasContact>
+          <entreprise:Contact>
+            <vcard:tel>081/33.74.85</vcard:tel>
+            <vcard:email></vcard:email>
+          </entreprise:Contact>
+        </entreprise:hasContact>
+      </rdf:Description>
+    </entreprise:isEstablished>
+    <entreprise:isEstablished>
+      <rdf:Description rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#CENTRE PUBLIC D&apos;ACTION SOCIALE - ADMINISTRATION CENTRALE">
+        <entreprise:subscribed>2006-09-08</entreprise:subscribed>
+        <entreprise:nomLegal>CENTRE PUBLIC D'ACTION SOCIALE - ADMINISTRATION CENTRALE</entreprise:nomLegal>
+        <entreprise:hasAdresseLegale rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#165, Rue de Dave"/>
+        <entreprise:hasContact>
+          <entreprise:Contact>
+            <vcard:tel></vcard:tel>
+            <vcard:email></vcard:email>
+          </entreprise:Contact>
+        </entreprise:hasContact>
+      </rdf:Description>
+    </entreprise:isEstablished>
+    <entreprise:nomLegal>CENTRE PUBLIC D'ACTION SOCIALE DE NAMUR</entreprise:nomLegal>
+  </rdf:Description>
+</rdf:RDF>
