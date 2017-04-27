@@ -50,10 +50,28 @@ public class RequestHandle {
         return xml;
         }
     }
+    
+    public static String toCSV(String request){    
+
+        ResultSet resultsQuery = querySPARQL(request);
+
+        if(resultsQuery == null) return "REQUEST ERROR";
+        else{
+        // write to a ByteArrayOutputStream
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+        ResultSetFormatter.outputAsCSV(outputStream, resultsQuery);
+
+        // and turn that into a String
+        String csv = new String(outputStream.toByteArray());
+
+        return csv;
+        }
+    }
 
     public static ResultSet querySPARQL(String request){
     	
-    	String path = "C:\\Users\\nutti\\workspace\\webtechproject\\ontologyapi\\src\\main\\ressources\\test.rdf";
+    	String path = "C:\\Users\\thoma\\workspace\\WebTechProject\\ontologyapi\\src\\main\\ressources\\test.rdf";
     	System.out.println(path);
         OntModel enterpriseModel = EnterpriseModel.getOntologyModel(path);
         String queryString = request ;

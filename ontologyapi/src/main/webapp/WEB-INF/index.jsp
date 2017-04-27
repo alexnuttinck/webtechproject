@@ -50,6 +50,7 @@
 							class="form-control" name="type">
 							<option>json</option>
 							<option>xml</option>
+							<option>csv</option>
 						</select>
 					</div>
 
@@ -62,19 +63,24 @@
 			</div>
 
 
-			<div class="col-sm-5">
+			<div class="col-sm-6">
 
 				<c:if test="${ !empty result }">
 					<label for="result">SPARQL Result :</label>
 					<div class="form-group">
 						<c:if test="${type eq 'xml'}">
 							<!-- format xml -->
-							<pre>
+							<pre style="height: auto;max-height: 500px;overflow: auto;background-color: #eeeeee;word-break: normal !important;word-wrap: normal !important;white-space: pre !important;white-space: pre-wrap;">
 					<c:out value="${ result }" />
 							</pre>
 						</c:if>
 						<c:if test="${type eq 'json'}">
-						<pre>
+						<pre style="height: auto;max-height: 500px;overflow: auto;background-color: #eeeeee;word-break: normal !important;word-wrap: normal !important;white-space: pre !important;white-space: pre-wrap;">
+					<c:out value="${ result }" />
+						</pre>
+						</c:if>
+						<c:if test="${type eq 'csv'}">
+						<pre style="height: auto;max-height: 500px;overflow: auto;background-color: #eeeeee;word-break: normal !important;word-wrap: normal !important;white-space: pre !important;white-space: pre-wrap;">
 					<c:out value="${ result }" />
 						</pre>
 						</c:if>

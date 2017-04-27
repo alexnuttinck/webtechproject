@@ -28,22 +28,32 @@ public class RequestForm extends Form {
 			{
 				setError(REQUESTSPARQL, "not select word");
 			}
+			
+			switch (type)
+			{
+			  case "json":
+			      try {result = RequestHandle.toJson(requestSparql);}
+	                catch (Exception e)
+	                {   
+	                    System.out.println(e.getMessage());
+	                    setError(REQUESTSPARQL, "sparql request error");}
+			    break;
+			  case "xml":
+			      try{result = RequestHandle.toXML(requestSparql);}
+	                catch (Exception e)
+	                {   System.out.println(e.getMessage());
+	                    setError(REQUESTSPARQL, "sparql request error");}
+			    break;
+			  case "csv":
+			      try{result = RequestHandle.toCSV(requestSparql);}
+	                catch (Exception e)
+	                {   System.out.println(e.getMessage());
+	                    setError(REQUESTSPARQL, "sparql request error");}
+			    break;
+			  default:
+			    System.out.println("format error");
+			}
 
-			if (type.equals("json"))
-			{
-				try {result = RequestHandle.toJson(requestSparql);}
-				catch (Exception e)
-				{	
-					System.out.println(e.getMessage());
-					setError(REQUESTSPARQL, "spraql request error");}
-			}
-			else 
-			{
-				try{result = RequestHandle.toXML(requestSparql);}
-				catch (Exception e)
-				{	System.out.println(e.getMessage());
-					setError(REQUESTSPARQL, "spraql request error");}
-			}
 		}
 
 
