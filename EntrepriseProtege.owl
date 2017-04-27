@@ -130,6 +130,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/Namur/entreprise-ontology#hasGeo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#hasGeo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/Namur/entreprise-ontology#Etablissement"/>
+        <rdfs:range rdf:resource="http://data.ign.fr/def/geometrie#Geometry"/>
+        <rdfs:comment xml:lang="fr">Les cafés et restaurants on tun établissement (puisqu&apos;ils sont sous-classe d&apos;Entreprise), donc ils n&apos;pont pas besoin de faire partie du domaine.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/Namur/entreprise-ontology#hasNum -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/Namur/entreprise-ontology#hasNum">
@@ -737,3 +747,4 @@
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
+
