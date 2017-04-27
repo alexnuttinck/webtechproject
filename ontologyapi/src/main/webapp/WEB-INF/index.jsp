@@ -50,6 +50,7 @@
 							class="form-control" name="type">
 							<option>json</option>
 							<option>xml</option>
+							<option>csv</option>
 						</select>
 					</div>
 
@@ -74,6 +75,11 @@
 							</pre>
 						</c:if>
 						<c:if test="${type eq 'json'}">
+						<pre>
+					<c:out value="${ result }" />
+						</pre>
+						</c:if>
+						<c:if test="${type eq 'csv'}">
 						<pre>
 					<c:out value="${ result }" />
 						</pre>
