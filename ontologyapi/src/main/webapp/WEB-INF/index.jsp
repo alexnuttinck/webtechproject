@@ -28,7 +28,7 @@
 				<form role="form" method="post" action="<c:url value="/index"/>">
 					<div class="form-group">
 						<label for="requestSparql">SPARQL Request :</label>
-						<textarea class="form-control" rows="5" name="requestSparql"><c:out value="${ requestSparql }" /></textarea>
+						<textarea style="resize:vertical;" class="form-control" rows="5" name="requestSparql" ><c:out value="${ requestSparql }" /></textarea>
 					</div>
 
 					<c:if test="${ !empty sessionAlertMessage }">
@@ -61,7 +61,6 @@
 				</form>
 
 			</div>
-
 
 			<div class="col-sm-6">
 
