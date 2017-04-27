@@ -10,6 +10,7 @@ public class Form {
 	// Field names
 	public static final String REQUESTSPARQL = "requestSparql";
 	public static final String TYPE = "type";
+	public static final String REQUEST = "request";
 	// End field names
 
 	private boolean isSuccessful;

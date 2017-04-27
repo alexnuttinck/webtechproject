@@ -71,7 +71,7 @@ public class RequestHandle {
 
     public static ResultSet querySPARQL(String request){
     	
-    	String path = "C:\\Users\\thoma\\workspace\\WebTechProject\\ontologyapi\\src\\main\\ressources\\test.rdf";
+    	String path = "C:\\Users\\nutti\\workspace\\webtechproject\\ontologyapi\\src\\main\\ressources\\test.rdf";
     	System.out.println(path);
         OntModel enterpriseModel = EnterpriseModel.getOntologyModel(path);
         String queryString = request ;

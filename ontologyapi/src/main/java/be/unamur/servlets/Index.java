@@ -17,6 +17,7 @@ public class Index extends HttpServlet {
 	
 	public static final String ATT_RESULT = "result"; 
 	public static final String ATT_TYPE = "type"; 
+	public static final String ATT_REQUESTSPARQL = "requestSparql"; 
 
 	private static final long serialVersionUID = 1L;
 
@@ -29,6 +30,7 @@ public class Index extends HttpServlet {
 		RequestForm form = new RequestForm();
 		String result = form.requestOWL(request);
 		String type = Form.getValueField(request, Form.TYPE);
+		String requestSparql = Form.getValueField(request, Form.REQUESTSPARQL);
 		HttpSession session = request.getSession();
 		
 		if (!form.isSuccessful()) {
@@ -42,6 +44,7 @@ public class Index extends HttpServlet {
 			//result = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
 			}
 			
+			request.setAttribute(ATT_REQUESTSPARQL, requestSparql);
 			request.setAttribute(ATT_RESULT, result);
 			request.setAttribute(ATT_TYPE, type);
 			
