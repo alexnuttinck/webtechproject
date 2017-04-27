@@ -28,9 +28,9 @@
 				<form role="form" method="post" action="<c:url value="/index"/>">
 					<div class="form-group">
 						<label for="requestSparql">SPARQL Request :</label>
-						<textarea style="resize:vertical;" class="form-control" rows="5" name="requestSparql" ><c:out value="${ requestSparql }" /></textarea>
+						<textarea style="resize: vertical;" class="form-control" rows="5"
+							name="requestSparql"><c:out value="${ requestSparql }" /></textarea>
 					</div>
-
 					<c:if test="${ !empty sessionAlertMessage }">
 						<div
 							class="alert alert-${sessionAlertType} }warning alert-dismissible"
@@ -59,6 +59,47 @@
 						Send <span class="glyphicon glyphicon-send"></span>
 					</button>
 				</form>
+				
+				<br> <br>
+				<div class="row">
+					<form action="index" method="post" action="<c:url value="/index"/>">
+						<input type="hidden" name="requestSparql"
+							value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
+SELECT ?nomLegal ?NoTVA
+WHERE {
+    ?Entreprise entreprise:nomLegal ?nomLegal.
+      ?Entreprise entreprise:hasTVA ?tva.
+      ?tva entreprise:NoTVA ?NoTVA
+}" />
+						<input type="submit" class="btn btn-primary" value="Example1"
+							name="requestSparql" id="SubmitRequestButton" />
+					</form>
+					<form action="index" method="post" action="<c:url value="/index"/>">
+						<input type="hidden" name="requestSparql"
+							value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
+SELECT ?nomLegal ?NoTVA
+WHERE {
+    ?Entreprise entreprise:nomLegal ?nomLegal.
+      ?Entreprise entreprise:hasTVA ?tva.
+      ?tva entreprise:NoTVA ?NoTVA
+}" />
+						<input type="submit" class="btn btn-primary" value="Example2"
+							name="requestSparql" id="SubmitRequestButton" />
+					</form>
+					<form action="index" method="post" action="<c:url value="/index"/>">
+						<input type="hidden" name="requestSparql"
+							value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
+SELECT ?nomLegal ?nom ?prenom
+WHERE {
+	?Entreprise entreprise:nomLegal ?nomLegal.
+    ?Entreprise entreprise:hasDirecteur ?directeur .
+?directeur entreprise:nomDeFamille ?nom .
+?directeur entreprise:prenom ?prenom.
+}" />
+						<input type="submit" class="btn btn-primary" value="Example3"
+							name="requestSparql" id="SubmitRequestButton" />
+					</form>
+				</div>
 
 			</div>
 
@@ -69,18 +110,18 @@
 					<div class="form-group">
 						<c:if test="${type eq 'xml'}">
 							<!-- format xml -->
-							<pre style="height: auto;max-height: 500px;overflow: auto;background-color: #eeeeee;word-break: normal !important;word-wrap: normal !important;white-space: pre !important;white-space: pre-wrap;">
-					<c:out value="${ result }" />
+							<pre
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
 							</pre>
 						</c:if>
 						<c:if test="${type eq 'json'}">
-						<pre style="height: auto;max-height: 500px;overflow: auto;background-color: #eeeeee;word-break: normal !important;word-wrap: normal !important;white-space: pre !important;white-space: pre-wrap;">
-					<c:out value="${ result }" />
+							<pre
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
 						</pre>
 						</c:if>
 						<c:if test="${type eq 'csv'}">
-						<pre style="height: auto;max-height: 500px;overflow: auto;background-color: #eeeeee;word-break: normal !important;word-wrap: normal !important;white-space: pre !important;white-space: pre-wrap;">
-					<c:out value="${ result }" />
+							<pre
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
 						</pre>
 						</c:if>
 					</div>
