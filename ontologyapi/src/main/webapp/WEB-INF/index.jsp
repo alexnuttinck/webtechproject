@@ -51,6 +51,8 @@
 							<option>json</option>
 							<option>xml</option>
 							<option>csv</option>
+							<option>csv-table</option>
+							<option>rdf/xml</option>
 						</select>
 					</div>
 
@@ -123,6 +125,16 @@ WHERE {
 						</pre>
 						</c:if>
 						<c:if test="${type eq 'csv'}">
+							<pre
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
+						</pre>
+						</c:if>
+						<c:if test="${type eq 'csv-table'}">
+							<pre
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
+						</pre>
+						</c:if>
+												<c:if test="${type eq 'rdf/xml'}">
 							<pre
 								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
 						</pre>

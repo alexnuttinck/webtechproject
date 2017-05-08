@@ -24,7 +24,7 @@ public class RequestForm extends Form {
 		}else
 		{
 
-			if(!requestSparql.matches(".*SELECT.*"))
+			if(!(requestSparql.matches(".*SELECT.*")|requestSparql.matches(".*DESCRIBE.*")|requestSparql.matches(".*CONSTRUCT.*")))
 			{
 				setError(REQUESTSPARQL, "not select word");
 			}
@@ -47,6 +47,18 @@ public class RequestForm extends Form {
 					break;
 				case "csv":
 					try{result = RequestHandle.toCSV(requestSparql);}
+					catch (Exception e)
+					{   System.out.println(e.getMessage());
+					setError(REQUESTSPARQL, "sparql request error");}
+					break;
+				case "csv-table":
+					try{result = RequestHandle.toCSVSTRUCT(requestSparql);}
+					catch (Exception e)
+					{   System.out.println(e.getMessage());
+					setError(REQUESTSPARQL, "sparql request error");}
+					break;
+				case "rdf/xml":
+					try{result = RequestHandle.toRDF(requestSparql);}
 					catch (Exception e)
 					{   System.out.println(e.getMessage());
 					setError(REQUESTSPARQL, "sparql request error");}
