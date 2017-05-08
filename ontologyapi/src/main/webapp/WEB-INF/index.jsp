@@ -61,10 +61,10 @@
 						Send <span class="glyphicon glyphicon-send"></span>
 					</button>
 				</form>
-				
+
 				<br> <br>
 				<div class="row">
-					<form action="index" method="post" action="<c:url value="/index"/>">
+					<form class="col-md-3" action="index" method="post" action="<c:url value="/index"/>">
 						<input type="hidden" name="requestSparql"
 							value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
 SELECT DISTINCT ?nomLegal ?NoTVA
@@ -76,7 +76,7 @@ WHERE {
 						<input type="submit" class="btn btn-primary" value="Example1"
 							name="requestSparql" id="SubmitRequestButton" />
 					</form>
-					<form action="index" method="post" action="<c:url value="/index"/>">
+					<form class="col-md-3" action="index" method="post" action="<c:url value="/index"/>">
 						<input type="hidden" name="requestSparql"
 							value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
 PREFIX vcard:  &lt;http://www.w3.org/2006/vcard/ns#&gt;
@@ -91,7 +91,7 @@ WHERE {
 						<input type="submit" class="btn btn-primary" value="Example2"
 							name="requestSparql" id="SubmitRequestButton" />
 					</form>
-					<form action="index" method="post" action="<c:url value="/index"/>">
+					<form class="col-md-3" action="index" method="post" action="<c:url value="/index"/>">
 						<input type="hidden" name="requestSparql"
 							value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
 SELECT DISTINCT ?nomLegal ?nom ?prenom
@@ -106,6 +106,58 @@ WHERE {
 					</form>
 				</div>
 
+				<br> <br>
+				<form role="form" method="post" action="<c:url value="/index"/>">
+
+					<div class="form-group">
+						<label for="type">Request in french :</label> <select
+							class="form-control" name="requestSparql">
+							<option
+								value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
+SELECT DISTINCT ?nomLegal ?NoTVA
+WHERE {
+    ?Entreprise entreprise:nomLegal ?nomLegal.
+      ?Entreprise entreprise:hasTVA ?tva.
+      ?tva entreprise:NoTVA ?NoTVA
+}">Ensemble des num&eacute;ros de TVA des entreprises</option>
+							<option value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
+PREFIX vcard:  &lt;http://www.w3.org/2006/vcard/ns#&gt;
+SELECT DISTINCT ?nomLegal ?streetAddress ?postalcode ?locality 
+WHERE {
+	?Entreprise entreprise:nomLegal ?nomLegal.
+     ?Entreprise entreprise:hasAdresseLegale ?adresse.
+     ?adresse vcard:street-address ?streetAddress.
+   	?adresse vcard:postal-code ?postalcode.
+    ?adresse vcard:locality ?locality. 
+}">Ensemble des noms d'entreprises avec leurs adresses respectives</option>
+							<option value="PREFIX entreprise:  &lt;http://www.semanticweb.org/Namur/entreprise-ontology#&gt;
+SELECT DISTINCT ?nomLegal ?nom ?prenom
+WHERE {
+	?Entreprise entreprise:nomLegal ?nomLegal.
+    ?Entreprise entreprise:hasDirecteur ?directeur .
+?directeur entreprise:nomDeFamille ?nom .
+?directeur entreprise:prenom ?prenom.
+}">Ensemble des noms et pr&eacute;noms des directeurs d'entreprise</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="type">TYPE Result :</label> <select
+							class="form-control" name="type">
+							<option>json</option>
+							<option>xml</option>
+							<option>csv</option>
+							<option>csv-table</option>
+							<option>rdf/xml</option>
+						</select>
+					</div>
+
+					<button type="submit" id="SubmitRequestButton"
+						class="btn btn-primary">
+						Send <span class="glyphicon glyphicon-send"></span>
+					</button>
+				</form>
+
 			</div>
 
 			<div class="col-sm-6">
@@ -116,27 +168,32 @@ WHERE {
 						<c:if test="${type eq 'xml'}">
 							<!-- format xml -->
 							<pre
-								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;">
+								<c:out value="${ result }" />
 							</pre>
 						</c:if>
 						<c:if test="${type eq 'json'}">
 							<pre
-								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;">
+								<c:out value="${ result }" />
 						</pre>
 						</c:if>
 						<c:if test="${type eq 'csv'}">
 							<pre
-								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;">
+								<c:out value="${ result }" />
 						</pre>
 						</c:if>
 						<c:if test="${type eq 'csv-table'}">
 							<pre
-								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;">
+								<c:out value="${ result }" />
 						</pre>
 						</c:if>
-												<c:if test="${type eq 'rdf/xml'}">
+						<c:if test="${type eq 'rdf/xml'}">
 							<pre
-								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;"><c:out value="${ result }" />
+								style="height: auto; max-height: 500px; overflow: auto; background-color: #eeeeee; word-break: normal !important; word-wrap: normal !important; white-space: pre !important; white-space: pre-wrap;">
+								<c:out value="${ result }" />
 						</pre>
 						</c:if>
 					</div>
